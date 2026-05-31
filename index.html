@@ -1,0 +1,2257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Alicia Laureano | Terapias Corporais</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+
+:root{
+
+  --verde:#0f5132;
+  --verde-claro:#198754;
+  --verde-soft:#e7f7ef;
+
+  --dourado:#d4af37;
+  --dourado-claro:#f1d67a;
+  --dourado-soft:#fff8df;
+
+  --rosa:#ff2f92;
+  --rosa-claro:#ff73bb;
+
+  --texto:#244034;
+  --texto-soft:#5f776b;
+
+  --branco:#ffffff;
+
+  --bg:
+  linear-gradient(
+  to bottom,
+  #f7fff9,
+  #fffdf6);
+
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--texto);
+  overflow-x:hidden;
+}
+
+h1,h2,h3,h4{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:600;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+img{
+  width:100%;
+  display:block;
+}
+
+.container{
+  width:100%;
+  max-width:1250px;
+  margin:auto;
+  padding:0 24px;
+}
+
+/* HEADER */
+
+header{
+  position:fixed;
+  width:100%;
+  top:0;
+  z-index:1000;
+
+  background:rgba(255,255,255,0.92);
+
+  backdrop-filter:blur(14px);
+
+  border-bottom:
+  1px solid rgba(212,175,55,0.18);
+
+  box-shadow:
+  0 10px 30px rgba(15,81,50,0.06);
+}
+
+.navbar{
+  height:85px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-size:40px;
+  color:var(--verde);
+  letter-spacing:2px;
+  font-weight:700;
+}
+
+/* MENU DESKTOP */
+
+.desktop-menu{
+  display:flex;
+  align-items:center;
+  gap:38px;
+}
+
+.desktop-menu a{
+  font-size:15px;
+  transition:0.3s;
+  position:relative;
+  color:var(--texto);
+  font-weight:600;
+}
+
+.desktop-menu a::after{
+  content:"";
+  width:0;
+  height:2px;
+
+  background:
+  linear-gradient(
+  to right,
+  var(--verde),
+  var(--dourado));
+
+  position:absolute;
+  left:0;
+  bottom:-6px;
+
+  transition:0.3s;
+  border-radius:10px;
+}
+
+.desktop-menu a:hover{
+  color:var(--verde);
+}
+
+.desktop-menu a:hover::after{
+  width:100%;
+}
+
+/* BOTÕES */
+
+.button{
+
+  background:
+  linear-gradient(
+  135deg,
+  var(--verde),
+  var(--dourado));
+
+  color:white;
+
+  padding:16px 30px;
+
+  border-radius:999px;
+
+  font-size:14px;
+  font-weight:700;
+
+  transition:0.35s;
+
+  box-shadow:
+  0 16px 35px rgba(15,81,50,0.18);
+}
+
+.button:hover{
+
+  transform:
+  translateY(-4px);
+
+  box-shadow:
+  0 22px 45px rgba(15,81,50,0.25);
+}
+
+.outline-button{
+
+  border:2px solid var(--dourado);
+
+  color:var(--verde);
+
+  padding:15px 28px;
+
+  border-radius:999px;
+
+  font-weight:700;
+
+  transition:0.35s;
+
+  background:white;
+}
+
+.outline-button:hover{
+
+  background:
+  linear-gradient(
+  135deg,
+  var(--verde),
+  var(--dourado));
+
+  color:white;
+
+  border-color:transparent;
+}
+
+/* MOBILE */
+
+.mobile-button{
+  display:none;
+
+  background:none;
+  border:none;
+
+  font-size:34px;
+
+  cursor:pointer;
+
+  color:var(--verde);
+
+  z-index:1200;
+}
+
+.overlay{
+  position:fixed;
+  inset:0;
+
+  background:rgba(0,0,0,0.45);
+
+  opacity:0;
+  visibility:hidden;
+
+  transition:0.3s;
+
+  z-index:998;
+}
+
+.overlay.active{
+  opacity:1;
+  visibility:visible;
+}
+
+.mobile-menu{
+  position:fixed;
+
+  top:0;
+  right:-100%;
+
+  width:85%;
+  max-width:360px;
+
+  height:100vh;
+
+  overflow-y:auto;
+
+  background:
+  linear-gradient(
+  to bottom,
+  #ffffff,
+  #f8fff9);
+
+  z-index:9999;
+
+  transition:0.4s;
+
+  padding:26px 22px;
+
+  box-shadow:
+  -10px 0 40px rgba(0,0,0,0.15);
+}
+
+.mobile-menu.active{
+  right:0;
+}
+
+.mobile-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:24px;
+}
+
+.mobile-top h2{
+  font-size:32px;
+  color:var(--verde);
+}
+
+.close-menu{
+  width:52px;
+  height:52px;
+
+  border:none;
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+  linear-gradient(
+  135deg,
+  var(--verde),
+  var(--dourado));
+
+  color:white;
+
+  font-size:28px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  flex-shrink:0;
+
+  z-index:10000;
+
+  box-shadow:
+  0 12px 30px rgba(15,81,50,0.25);
+}
+
+/* LINKS MOBILE */
+
+.mobile-links{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.mobile-links a,
+.mobile-dropdown-btn{
+
+  width:100%;
+
+  padding:18px 20px;
+
+  border-radius:18px;
+
+  background:white;
+
+  border:
+  1px solid rgba(212,175,55,0.16);
+
+  color:var(--verde);
+
+  font-weight:700;
+
+  font-size:16px;
+
+  box-shadow:
+  0 8px 20px rgba(15,81,50,0.05);
+
+  transition:0.3s;
+}
+
+.mobile-links a:hover,
+.mobile-dropdown-btn:hover{
+
+  background:
+  linear-gradient(
+  135deg,
+  var(--verde),
+  var(--dourado));
+
+  color:white;
+}
+
+.mobile-dropdown-btn{
+  border:none;
+  cursor:pointer;
+  text-align:left;
+}
+
+/* DROPDOWN DESKTOP */
+
+.dropdown{
+  position:relative;
+}
+
+.dropdown-btn{
+
+  background:none;
+  border:none;
+
+  cursor:pointer;
+
+  font-size:15px;
+  font-weight:600;
+
+  color:var(--texto);
+
+  font-family:'Inter',sans-serif;
+}
+
+.dropdown-content{
+
+  position:absolute;
+
+  top:40px;
+  left:0;
+
+  min-width:240px;
+
+  background:white;
+
+  border-radius:20px;
+
+  padding:12px;
+
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+
+  opacity:0;
+  visibility:hidden;
+
+  transform:translateY(10px);
+
+  transition:0.3s;
+
+  box-shadow:
+  0 18px 40px rgba(15,81,50,0.12);
+
+  border:
+  1px solid rgba(212,175,55,0.18);
+
+  z-index:1000;
+}
+
+.dropdown-content a{
+
+  padding:14px 16px;
+
+  border-radius:14px;
+
+  transition:0.3s;
+
+  color:#ff9f1c;
+  font-weight:600;
+}
+
+.dropdown-content a:hover{
+
+  background:var(--verde-soft);
+
+  color:var(--verde);
+}
+
+.dropdown:hover .dropdown-content{
+
+  opacity:1;
+  visibility:visible;
+
+  transform:translateY(0);
+}
+
+/* MOBILE DROPDOWN */
+
+.mobile-dropdown-content{
+  display:none;
+  padding-left:12px;
+  margin-top:10px;
+}
+
+.mobile-dropdown-content a{
+  display:block;
+  margin-bottom:10px;
+
+  color:#ff9f1c;
+  font-weight:600;
+}
+
+.mobile-dropdown-content a:hover{
+
+  background:
+  linear-gradient(
+  135deg,
+  var(--verde),
+  var(--dourado));
+
+  color:white;
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding-top:120px;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+
+.hero-subtitle{
+  color:var(--dourado);
+  letter-spacing:4px;
+  text-transform:uppercase;
+  font-size:13px;
+  font-weight:700;
+}
+
+.hero-title{
+  font-size:84px;
+  line-height:1;
+  margin-top:26px;
+  color:var(--verde);
+}
+
+.hero-text{
+  margin-top:30px;
+  font-size:18px;
+  line-height:1.9;
+  color:var(--texto-soft);
+}
+
+.hero-buttons{
+  display:flex;
+  gap:18px;
+  margin-top:45px;
+  flex-wrap:wrap;
+}
+
+/* IMAGEM HERO */
+
+.hero-image{
+  position:relative;
+}
+
+.hero-image::before{
+  content:"";
+
+  position:absolute;
+
+  inset:-18px;
+
+  border-radius:45px;
+
+  background:
+  linear-gradient(
+  135deg,
+  #ff2f92,
+  #ff73bb,
+  #ffc8e4);
+
+  z-index:-1;
+
+  box-shadow:
+  0 25px 60px rgba(255,105,180,0.30);
+}
+
+.hero-image img{
+  height:760px;
+  object-fit:cover;
+
+  border-radius:40px;
+
+  border:4px solid white;
+}
+
+/* SECTION */
+
+section{
+  padding:120px 0;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:70px;
+}
+
+.section-title span{
+  color:var(--dourado);
+  letter-spacing:4px;
+  text-transform:uppercase;
+  font-size:13px;
+  font-weight:700;
+}
+
+.section-title h2{
+  font-size:60px;
+  margin-top:20px;
+  color:var(--verde);
+}
+
+/* GRID */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+
+/* CARD PADRÃO */
+
+.card,
+.therapy-card{
+
+  position:relative;
+
+  overflow:hidden;
+
+  cursor:pointer;
+
+  background:
+  linear-gradient(
+  145deg,
+  rgba(255,255,255,0.96),
+  rgba(255,248,223,0.96));
+
+  border-radius:34px;
+
+  padding:42px;
+
+  border:
+  1px solid rgba(212,175,55,0.18);
+
+  transition:0.45s;
+
+  box-shadow:
+  0 18px 40px rgba(15,81,50,0.08);
+}
+
+.card:hover,
+.therapy-card:hover{
+
+  transform:
+  translateY(-10px);
+
+  box-shadow:
+  0 30px 70px rgba(15,81,50,0.15);
+}
+
+.card h3,
+.therapy-card h3{
+  font-size:38px;
+  color:var(--verde);
+  margin-bottom:16px;
+}
+
+.card p,
+.therapy-card p{
+  line-height:1.9;
+  color:var(--texto-soft);
+}
+
+.therapy-card::after{
+  content:"→";
+
+  position:absolute;
+
+  right:28px;
+  bottom:24px;
+
+  font-size:34px;
+  color:var(--rosa);
+}
+
+.therapy-icon{
+  width:74px;
+  height:74px;
+
+  border-radius:24px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:34px;
+
+  margin-bottom:24px;
+
+  background:
+  linear-gradient(
+  135deg,
+  var(--rosa),
+  var(--dourado));
+
+  color:white;
+}
+
+/* ABOUT */
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+
+.about-image{
+  position:relative;
+}
+
+.about-image::before{
+  content:"";
+
+  position:absolute;
+
+  inset:-18px;
+
+  border-radius:45px;
+
+  background:
+  linear-gradient(
+  135deg,
+  #ff2f92,
+  #ff73bb,
+  #ffc8e4);
+
+  z-index:-1;
+
+  box-shadow:
+  0 25px 60px rgba(255,105,180,0.30);
+}
+
+.about-image img{
+  height:650px;
+  object-fit:cover;
+
+  border-radius:40px;
+
+  border:4px solid white;
+}
+
+.about-content p{
+  margin-top:30px;
+  line-height:1.9;
+  color:var(--texto-soft);
+  font-size:18px;
+}
+
+.mini-cards{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+  margin-top:40px;
+}
+
+.mini-card{
+
+  background:white;
+
+  border:
+  1px solid rgba(212,175,55,0.16);
+
+  padding:22px;
+
+  border-radius:22px;
+
+  text-align:center;
+
+  color:var(--verde);
+
+  font-weight:700;
+
+  box-shadow:
+  0 10px 25px rgba(15,81,50,0.05);
+}
+
+/* VIDEOS */
+
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+
+.video-card-youtube{
+  overflow:hidden;
+
+  border-radius:30px;
+
+  box-shadow:
+  0 20px 45px rgba(15,81,50,0.10);
+
+  border:4px solid white;
+}
+
+.video-card-youtube iframe{
+  width:100%;
+  height:250px;
+  border:none;
+}
+
+/* FAQ */
+
+.faq{
+  max-width:900px;
+  margin:auto;
+}
+
+.faq-item{
+
+  background:white;
+
+  border-radius:24px;
+
+  margin-bottom:18px;
+
+  overflow:hidden;
+
+  border:
+  1px solid rgba(212,175,55,0.16);
+
+  box-shadow:
+  0 12px 28px rgba(15,81,50,0.05);
+}
+
+.faq-question{
+  width:100%;
+  border:none;
+  background:none;
+  padding:28px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  cursor:pointer;
+
+  font-size:18px;
+
+  color:var(--verde);
+
+  font-weight:700;
+}
+
+.faq-answer{
+  display:none;
+  padding:0 28px 28px;
+  line-height:1.8;
+  color:var(--texto-soft);
+}
+
+/* CTA */
+
+.cta-section{
+
+  background:
+  linear-gradient(
+  135deg,
+  var(--verde),
+  var(--dourado));
+
+  color:white;
+
+  text-align:center;
+}
+
+.cta-section h2{
+  font-size:64px;
+  line-height:1.2;
+}
+
+.cta-section p{
+  margin-top:30px;
+  font-size:18px;
+  line-height:1.8;
+}
+
+.cta-white{
+
+  display:inline-block;
+
+  margin-top:40px;
+
+  background:white;
+
+  color:var(--verde);
+
+  padding:18px 36px;
+
+  border-radius:999px;
+
+  font-weight:700;
+}
+
+/* FOOTER */
+
+footer{
+
+  background:white;
+
+  padding:40px 0;
+
+  border-top:
+  1px solid rgba(212,175,55,0.18);
+}
+
+.footer-content{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+.footer-links{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+/* FLOAT */
+
+.float-whatsapp{
+  position:fixed;
+
+  right:24px;
+  bottom:24px;
+
+  width:72px;
+  height:72px;
+
+  border-radius:50%;
+
+  background:
+  linear-gradient(
+  135deg,
+  var(--verde),
+  var(--dourado));
+
+  color:white;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:30px;
+
+  z-index:999;
+
+  box-shadow:
+  0 18px 40px rgba(15,81,50,0.22);
+}
+
+/* MODAL */
+
+.modal{
+  position:fixed;
+  inset:0;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(0,0,0,0.65);
+
+  backdrop-filter:blur(10px);
+
+  opacity:0;
+  visibility:hidden;
+
+  transition:0.4s;
+
+  z-index:3000;
+
+  overflow-y:auto;
+
+  padding:30px 16px;
+}
+
+.modal.active{
+  opacity:1;
+  visibility:visible;
+}
+
+.modal-content{
+  position:relative;
+
+  width:100%;
+  max-width:720px;
+
+  max-height:95vh;
+
+  overflow-y:auto;
+
+  border-radius:38px;
+
+  background:
+  linear-gradient(
+  145deg,
+  #ffffff,
+  #fffdf6);
+
+  animation:modalShow .4s ease;
+
+  box-shadow:
+  0 30px 80px rgba(0,0,0,0.35);
+}
+
+@keyframes modalShow{
+  from{
+    opacity:0;
+    transform:translateY(30px) scale(.95);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+.modal-top{
+  padding:38px;
+
+  background:
+  linear-gradient(
+  135deg,
+  var(--rosa),
+  var(--dourado));
+
+  color:white;
+}
+
+.modal-top h2{
+  font-size:52px;
+  margin-bottom:12px;
+}
+
+.modal-top p{
+  font-size:18px;
+  line-height:1.7;
+}
+
+.modal-body{
+  padding:38px;
+}
+
+.modal-body h4{
+  font-size:24px;
+  color:var(--verde);
+  margin-bottom:16px;
+}
+
+.modal-body ul{
+  padding-left:20px;
+}
+
+.modal-body li{
+  margin-bottom:14px;
+  color:var(--texto-soft);
+  line-height:1.8;
+}
+
+.modal-close{
+  position:absolute;
+  top:18px;
+  right:18px;
+
+  width:54px;
+  height:54px;
+
+  border:none;
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:white;
+
+  color:var(--rosa);
+
+  font-size:28px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  z-index:10;
+
+  box-shadow:
+  0 10px 25px rgba(0,0,0,0.18);
+
+  transition:0.3s;
+}
+
+.modal-close:hover{
+  transform:rotate(90deg) scale(1.08);
+}
+
+.modal-button{
+  display:inline-block;
+
+  margin-top:30px;
+
+  background:
+  linear-gradient(
+  135deg,
+  var(--verde),
+  var(--dourado));
+
+  color:white;
+
+  padding:16px 28px;
+
+  border-radius:999px;
+
+  font-weight:700;
+}
+
+/* SCROLL */
+
+.modal-content::-webkit-scrollbar,
+.mobile-menu::-webkit-scrollbar{
+  width:8px;
+}
+
+.modal-content::-webkit-scrollbar-thumb,
+.mobile-menu::-webkit-scrollbar-thumb{
+
+  background:
+  linear-gradient(
+  to bottom,
+  var(--rosa),
+  var(--dourado));
+
+  border-radius:20px;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:992px){
+
+  .desktop-menu,
+  .desktop-button{
+    display:none;
+  }
+
+  .mobile-button{
+    display:block;
+  }
+
+  .hero-grid,
+  .about-grid,
+  .cards,
+  .video-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-title{
+    font-size:58px;
+  }
+
+  .section-title h2{
+    font-size:42px;
+  }
+
+  .cta-section h2{
+    font-size:42px;
+  }
+
+  .hero-image img{
+    height:520px;
+  }
+
+  .about-image img{
+    height:480px;
+  }
+
+}
+
+@media(max-width:600px){
+
+  section{
+    padding:90px 0;
+  }
+
+  .logo{
+    font-size:30px;
+  }
+
+  .hero{
+    padding-top:110px;
+  }
+
+  .hero-title{
+    font-size:46px;
+  }
+
+  .hero-text{
+    font-size:16px;
+  }
+
+  .section-title{
+    margin-bottom:45px;
+  }
+
+  .section-title h2{
+    font-size:34px;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+  }
+
+  .button,
+  .outline-button{
+    width:100%;
+    text-align:center;
+  }
+
+  .mini-cards{
+    grid-template-columns:1fr;
+  }
+
+  .card,
+  .therapy-card{
+    padding:30px;
+  }
+
+  .card h3,
+  .therapy-card h3{
+    font-size:30px;
+  }
+
+  .modal{
+    align-items:flex-start;
+    padding-top:25px;
+    padding-bottom:25px;
+  }
+
+  .modal-content{
+    max-height:none;
+    border-radius:28px;
+  }
+
+  .modal-top{
+    padding:28px 24px;
+  }
+
+  .modal-top h2{
+    font-size:38px;
+    line-height:1.1;
+    padding-right:50px;
+  }
+
+  .modal-top p{
+    font-size:16px;
+  }
+
+  .modal-body{
+    padding:28px 24px;
+  }
+
+  .modal-close{
+
+    width:48px;
+    height:48px;
+
+    font-size:24px;
+
+    top:14px;
+    right:14px;
+  }
+
+  .cta-section h2{
+    font-size:34px;
+  }
+
+  .footer-content{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .float-whatsapp{
+    width:64px;
+    height:64px;
+    font-size:26px;
+  }
+
+}
+/* =========================================
+   FOOTER MODERNO
+========================================= */
+
+.footer-modern{
+
+  background:
+  linear-gradient(
+  135deg,
+  #ffffff,
+  #fffaf0);
+
+  border-top:
+  1px solid rgba(212,175,55,0.18);
+
+  padding-top:70px;
+
+  margin-top:40px;
+}
+
+.footer-modern-content{
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:40px;
+
+  padding-bottom:50px;
+}
+
+.footer-brand h2{
+
+  font-size:42px;
+
+  color:var(--verde);
+
+  margin-bottom:16px;
+}
+
+.footer-brand p{
+
+  max-width:500px;
+
+  line-height:1.8;
+
+  color:var(--texto-soft);
+
+  font-size:16px;
+}
+
+.footer-social{
+
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.social-icon{
+
+  width:68px;
+  height:68px;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:28px;
+
+  color:white;
+
+  background:
+  linear-gradient(
+  135deg,
+  var(--verde),
+  var(--dourado));
+
+  box-shadow:
+  0 15px 35px rgba(15,81,50,0.18);
+
+  transition:0.35s;
+}
+
+.social-icon:hover{
+
+  transform:
+  translateY(-6px)
+  scale(1.08);
+
+  background:
+  linear-gradient(
+  135deg,
+  var(--rosa),
+  var(--dourado));
+
+  box-shadow:
+  0 20px 45px rgba(255,47,146,0.25);
+}
+
+.footer-bottom{
+
+  padding:24px;
+
+  text-align:center;
+
+  border-top:
+  1px solid rgba(212,175,55,0.15);
+
+  color:var(--texto-soft);
+
+  font-size:14px;
+
+  background:rgba(255,255,255,0.65);
+
+  backdrop-filter:blur(10px);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .footer-modern-content{
+
+    flex-direction:column;
+
+    text-align:center;
+  }
+
+  .footer-brand h2{
+    font-size:34px;
+  }
+
+  .footer-social{
+    justify-content:center;
+  }
+
+  .social-icon{
+
+    width:60px;
+    height:60px;
+
+    font-size:24px;
+  }
+
+}
+  </style>
+  <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- OVERLAY -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- MOBILE MENU -->
+  <aside class="mobile-menu" id="mobileMenu">
+
+    <div class="mobile-top">
+      <h2>Menu</h2>
+
+      <button class="close-menu" id="closeMenu">
+  ✕
+</button>
+    </div>
+
+<nav class="mobile-links">
+
+  <a href="#">Início</a>
+
+  <div class="mobile-dropdown">
+
+    <button class="mobile-dropdown-btn">
+      Conteúdos exclusivos +
+    </button>
+
+    <div class="mobile-dropdown-content">
+
+      <a href="https://privacy.com.br/@Rainhadamassagemtantrica">Privacy</a>
+      <a href="https://t.me/+eMzIydUqcEBkMjIx">Telegram</a>
+      <a href="https://topmassagens.com.br/clube/morena-trans-gostosa/">Top Massagens</a>
+
+    </div>
+
+  </div>
+
+  <a href="#">Sobre</a>
+  <a href="#">Vídeos</a>
+  <a href="#">FAQ</a>
+  <a href="#">Contato</a>
+
+  <a href="https://wa.me/5511976079965?text=Encontrei%20você%20no%20seu%20site%20e%20gostaria%20de%20mais%20informações.." class="button">
+    Agendar Atendimento
+  </a>
+
+</nav>
+
+  </aside>
+
+  <!-- HEADER -->
+  <header>
+
+    <div class="container navbar">
+
+      <h1 class="logo">
+        Alicia Laureano
+      </h1>
+
+      <nav class="desktop-menu">
+
+  <a href="#">Início</a>
+
+  <div class="dropdown">
+
+    <button class="dropdown-btn">
+      Conteúdos exclusivos ▾
+    </button>
+
+    <div class="dropdown-content">
+
+      <a href="https://privacy.com.br/@Rainhadamassagemtantrica">Privacy</a>
+      <a href="https://t.me/+eMzIydUqcEBkMjIx">Telegram</a>
+      <a href="https://topmassagens.com.br/clube/morena-trans-gostosa/">Top Massagens</a>
+
+    </div>
+
+  </div>
+
+  <a href="#">Sobre</a>
+  <a href="#">Vídeos</a>
+  <a href="#">FAQ</a>
+  <a href="#">Contato</a>
+
+</nav>
+
+      <a href="https://wa.me/5511976079965?text=Encontrei%20você%20no%20seu%20site%20e%20gostaria%20de%20mais%20informações.." class="button desktop-button">
+        Agendar
+      </a>
+
+      <button class="mobile-button" id="openMenu">
+        ☰
+      </button>
+
+    </div>
+
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="container hero-grid">
+
+      <div>
+
+        <span class="hero-subtitle">
+          Bem-estar • acolhimento • presença
+        </span>
+
+        <h2 class="hero-title">
+          Terapias corporais com acolhimento e presença para homens e mulheres!
+        </h2>
+
+        <p class="hero-text">
+          Um espaço aconchegante e intimista, pensado para proporcionar relaxamento, conexão corporal e bem-estar.
+        </p>
+		<span class="hero-subtitle">
+          Tantra • Terapêutica com escuta • Nuru • Mista • Mix • Conteúdos exclusivos
+        </span>
+
+        <div class="hero-buttons">
+
+          <a href="https://wa.me/5511976079965?text=Encontrei%20você%20no%20seu%20site%20e%20gostaria%20de%20mais%20informações.." class="button">
+            Agendar Sessão
+          </a>
+
+          <a href="#" class="outline-button">
+            Conheça os Atendimentos
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="hero-image">
+
+        <img src="fotos/img1.jpg"
+          alt="Alicia Laureano">
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- BENEFITS -->
+  <section>
+
+   <div class="container cards">
+
+  <!-- CARD 1 -->
+
+  <div class="therapy-card"
+       onclick="openTherapyModal(
+       'Ambiente residencial',
+       'Cada sessão é conduzida com acolhimento, empatia e atenção individual.',
+       [
+       ' Um espaço intimista preparado para acolher, desacelerar e promover tranquilidade.',
+       
+       ])">
+
+    <div class="therapy-icon">❀</div>
+
+    <h3>Ambiente residencial</h3>
+
+    <p>
+     Um espaço intimista preparado para acolher, desacelerar e promover tranquilidade.
+    </p>
+
+  </div>
+
+  <!-- CARD 2 -->
+
+  <div class="therapy-card"
+       onclick="openTherapyModal(
+       'Ambiente Sofisticado',
+       'Um espaço preparado para transmitir leveza, exclusividade e tranquilidade.',
+       [
+       'Ambiente aconchegante e reservado',
+       'Privacidade durante o atendimento',
+       'Climatização agradável',
+       'Atmosfera tranquila e relaxante',
+       'Atendimento acolhedor e individualizado'
+       ])">
+
+    <div class="therapy-icon">✦</div>
+
+    <h3>Ambiente Sofisticado</h3>
+
+    <p>
+      Um espaço preparado para transmitir leveza, exclusividade e tranquilidade.
+    </p>
+
+  </div>
+
+  <!-- CARD 3 -->
+
+  <div class="therapy-card"
+       onclick="openTherapyModal(
+       'Experiência sensorial',
+       'Vivências terapêuticas voltadas ao equilíbrio físico, mental e emocional.',
+       [
+       'Relaxamento profundo',
+       'Redução de tensões acumuladas',
+       'Maior percepção corporal',
+       'Reconexão com sensações e emoções',
+       'Presença, acolhimento e bem-estar',
+       'Relaxamento profundo (Pode ter dinâmica específica)'
+       ])">
+
+    <div class="therapy-icon">♥</div>
+
+    <h3>Experiência sensorial</h3>
+
+    <p>
+      Conexão Corporal e Sensibilidade. Espaço para relaxar, perceber o corpo com mais presença e cultivar bem-estar físico e emocional.
+    </p>
+
+</div>
+
+</div>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section style="background:white;">
+
+    <div class="container about-grid">
+
+      <div class="about-image">
+
+        <img src="fotos/img2.jpg"
+          alt="Sobre Alicia">
+
+      </div>
+
+      <div class="about-content">
+
+        <div class="section-title" style="text-align:left; margin-bottom:0;">
+
+          <span>Sobre Alicia</span>
+
+          <h2>
+            Cuidado terapêutico voltado ao corpo e às emoções.
+          </h2>
+
+        </div>
+
+        <p>
+          Experiências sensoriais e conduzidas com presença, acolhimento e intensidade.
+        </p>
+		<p>
+          Sou Alicia Laureano, massoterapeuta e estudante de Neuropsicanálise. SOU UMA MULHER TRANS.
+        </p>
+		<p>
+          Atuo com terapias corporais, experiências sensoriais e técnicas voltadas ao relaxamento profundo, percepção do corpo e bem-estar emocional. 
+        </p>
+		 <p>
+          Meus atendimentos acontecem em um ambiente intimista e reservado, pensado para acolher diferentes vivências, respeitando limites, individualidade e conforto.
+        </p>
+
+        <div class="mini-cards">
+
+          <div class="mini-card">
+            Massoterapia
+          </div>
+
+          <div class="mini-card">
+            Terapias Integrativas
+          </div>
+
+          <div class="mini-card">
+            Atendimento Feminino
+          </div>
+
+          <div class="mini-card">
+            Bem-estar Corporal
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- THERAPIES -->
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <span>Conheça meus serviços</span>
+
+        <!--<h2>
+          Terapias desenvolvidas para equilíbrio e reconexão.
+        </h2>-->
+
+      </div>
+
+<div class="cards">
+
+  <div class="therapy-card"
+       onclick="openTherapyModal(
+       'Experiência de relaxamento',
+       'Relaxamento profundo para aliviar tensões físicas e emocionais.',
+       [
+       'Relaxamento e presença',
+       'Vivência sensorial',
+       'Cuidado corporal',
+       'Experiência corporal',
+       'Terapêutica'
+	   
+       ])">
+
+    <div class="therapy-icon">✿</div>
+
+    <h3>Experiência de relaxamento</h3>
+
+    <p>
+      Alívio do estresse, relaxamento muscular
+      e melhora da qualidade do sono.
+    </p>
+
+  </div>
+
+  <div class="therapy-card"
+       onclick="openTherapyModal(
+       'Massagem relaxante',
+       'Relaxamento profundo para aliviar tensões físicas e emocionais',
+       [
+       'Redução do estresse do dia a dia',
+       'Relaxamento físico e emocional',
+       'Momento de pausa e autocuidado',
+       'Sensação de acolhimento e bem-estar',
+       'Atendimento individualizado em ambiente reservado',
+       'Experiência conduzida com presença e atenção',
+       'Aqui você pode ficar com roupa leve ou sem roupa',
+       'A massoterapeuta permanecerá vestida'
+       ])">
+
+    <div class="therapy-icon">❀</div>
+
+    <h3>Massagem relaxante</h3>
+
+    <p>
+      Relaxamento profundo para aliviar tensões físicas e emocionais.
+    </p>
+
+</div>
+
+  <div class="therapy-card"
+       onclick="openTherapyModal(
+       'Relaxamento Sensorial',
+       'Uma experiência sofisticada de presença e reconexão interior.',
+       [
+       'Ambiente sensorial exclusivo',
+       'Relaxamento mental e corporal',
+       'Redução da tensão emocional',
+       'Experiência acolhedora',
+       'Sensação profunda de leveza'
+       ])">
+
+    <div class="therapy-icon">♥</div>
+
+    <h3>Relaxamento Sensorial</h3>
+
+    <p>
+      Uma experiência suave voltada ao bem-estar,
+      presença e reconexão interior.
+    </p>
+
+  </div>
+
+</div>
+
+    </div>
+
+  </section>
+
+  <!-- VIDEOS -->
+  <section class="videos-section">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <span>Vídeos</span>
+
+        <h2>
+          Conteúdos terapêuticos e educativos.
+        </h2>
+
+      </div>
+
+      <div class="video-grid">
+
+        <!-- VIDEO 1 -->
+        <div class="video-card-youtube">
+
+          <iframe
+            src="https://www.youtube.com/embed/DG3oM2evfUY?rel=0"
+            title="Vídeo YouTube"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+
+        </div>
+
+        <!-- VIDEO 2 -->
+        <div class="video-card-youtube">
+
+          <iframe
+            src="https://www.youtube.com/embed/wSqx4XpSSS8?rel=0"
+            title="Vídeo YouTube"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+
+        </div>
+
+        <!-- VIDEO 3 -->
+        <div class="video-card-youtube">
+
+          <iframe
+            src="https://www.youtube.com/embed/DG3oM2evfUY?rel=0"
+            title="Vídeo YouTube"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FAQ -->
+  <section>
+
+    <div class="container faq">
+
+      <div class="section-title">
+
+        <span>FAQ</span>
+
+        <h2>
+          Perguntas Frequentes
+        </h2>
+
+      </div>
+
+      <div class="faq-item">
+
+        <button class="faq-question">
+          O atendimento é terapêutico?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          Sim. O foco é acolhimento emocional, relaxamento e bem-estar corporal.
+        </div>
+
+      </div>
+
+      <div class="faq-item">
+
+        <button class="faq-question">
+          Como funciona a sessão?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          Cada atendimento é conduzido de forma personalizada conforme as necessidades da cliente.
+        </div>
+
+      </div>
+
+      <div class="faq-item">
+
+        <button class="faq-question">
+          Existe sigilo e privacidade?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          Sim. Todo atendimento é realizado com ética, respeito e confidencialidade.
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+
+    <div class="container">
+
+      <h2>
+        Um espaço feminino de acolhimento,
+        presença e reconexão corporal.
+      </h2>
+
+      <p>
+        Agende sua experiência terapêutica e conheça um atendimento sofisticado e humanizado.
+      </p>
+
+      <a href="https://wa.me/5511976079965?text=Encontrei%20você%20no%20seu%20site%20e%20gostaria%20de%20mais%20informações.." class="cta-white">
+        Agendar Atendimento
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <!-- FOOTER -->
+<footer class="footer-modern">
+
+  <div class="container footer-modern-content">
+
+    <div class="footer-brand">
+
+      <h2>
+        Alicia Laureano
+      </h2>
+
+      <p>
+        Terapias corporais femininas com acolhimento,
+        sofisticação e bem-estar.
+      </p>
+
+    </div>
+
+    <div class="footer-social">
+
+      <a href="https://instagram.com"
+         target="_blank"
+         class="social-icon">
+        <i class="fab fa-instagram"></i>
+      </a>
+
+      <a href="https://wa.me/5511976079965?text=Encontrei%20você%20no%20seu%20site%20e%20gostaria%20de%20mais%20informações.."
+         target="_blank"
+         class="social-icon">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+
+      <a href="https://t.me/+eMzIydUqcEBkMjIx"
+         target="_blank"
+         class="social-icon">
+        <i class="fab fa-telegram-plane"></i>
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+
+    © 2026 Alicia Laureano • Todos os direitos reservados.
+
+  </div>
+
+</footer>
+
+  <!-- FLOAT -->
+  <a href="https://wa.me/5511976079965?text=Encontrei%20você%20no%20seu%20site%20e%20gostaria%20de%20mais%20informações.." class="float-whatsapp">
+    ♥
+  </a>
+<!-- MODAL -->
+
+<div class="modal" id="therapyModal">
+
+  <div class="modal-content">
+
+    <button class="modal-close" id="closeTherapyModal">
+      ✕
+    </button>
+
+    <div class="modal-top">
+
+      <h2 id="modalTitle"></h2>
+
+      <p id="modalDescription"></p>
+
+    </div>
+
+    <div class="modal-body">
+
+      <h4>
+        Benefícios do atendimento
+      </h4>
+
+      <ul id="modalBenefits"></ul>
+
+      <a href="https://wa.me/5511976079965?text=Encontrei%20você%20no%20seu%20site%20e%20gostaria%20de%20mais%20informações.."
+         class="modal-button">
+         Agendar Atendimento
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+  <script>
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* =========================================
+     MENU MOBILE
+  ========================================= */
+
+  const openMenu =
+  document.getElementById('openMenu');
+
+  const closeMenu =
+  document.getElementById('closeMenu');
+
+  const mobileMenu =
+  document.getElementById('mobileMenu');
+
+  const overlay =
+  document.getElementById('overlay');
+
+  // ABRIR MENU
+
+  openMenu.addEventListener('click', () => {
+
+    mobileMenu.classList.add('active');
+
+    overlay.classList.add('active');
+
+  });
+
+  // FECHAR MENU
+
+  function closeMobileMenu(){
+
+    mobileMenu.classList.remove('active');
+
+    overlay.classList.remove('active');
+
+  }
+
+  // BOTÃO X
+
+  closeMenu.addEventListener(
+    'click',
+    closeMobileMenu
+  );
+
+  // OVERLAY
+
+  overlay.addEventListener(
+    'click',
+    closeMobileMenu
+  );
+
+  /* =========================================
+     DROPDOWN MOBILE
+  ========================================= */
+
+  const mobileDropdownBtn =
+  document.querySelector('.mobile-dropdown-btn');
+
+  const mobileDropdownContent =
+  document.querySelector('.mobile-dropdown-content');
+
+  if(mobileDropdownBtn){
+
+    mobileDropdownBtn.addEventListener('click', () => {
+
+      if(
+        mobileDropdownContent.style.display === 'block'
+      ){
+
+        mobileDropdownContent.style.display = 'none';
+
+      }else{
+
+        mobileDropdownContent.style.display = 'block';
+
+      }
+
+    });
+
+  }
+
+  /* =========================================
+     FAQ
+  ========================================= */
+
+  const faqButtons =
+  document.querySelectorAll('.faq-question');
+
+  faqButtons.forEach(button => {
+
+    button.addEventListener('click', () => {
+
+      const answer =
+      button.nextElementSibling;
+
+      const icon =
+      button.querySelector('span');
+
+      if(answer.style.display === 'block'){
+
+        answer.style.display = 'none';
+
+        icon.textContent = '+';
+
+      }else{
+
+        answer.style.display = 'block';
+
+        icon.textContent = '−';
+
+      }
+
+    });
+
+  });
+
+  /* =========================================
+     MODAL ATENDIMENTOS
+  ========================================= */
+
+  const therapyModal =
+  document.getElementById('therapyModal');
+
+  const closeTherapyModalBtn =
+  document.getElementById('closeTherapyModal');
+
+  const modalTitle =
+  document.getElementById('modalTitle');
+
+  const modalDescription =
+  document.getElementById('modalDescription');
+
+  const modalBenefits =
+  document.getElementById('modalBenefits');
+
+  // ABRIR MODAL
+
+  window.openTherapyModal = function(
+    title,
+    description,
+    benefits
+  ){
+
+    modalTitle.innerText = title;
+
+    modalDescription.innerText = description;
+
+    modalBenefits.innerHTML = '';
+
+    benefits.forEach(item => {
+
+      modalBenefits.innerHTML += `
+        <li>${item}</li>
+      `;
+
+    });
+
+    therapyModal.classList.add('active');
+
+    document.body.style.overflow = 'hidden';
+
+  }
+
+  // FECHAR MODAL
+
+  function closeTherapy(){
+
+    therapyModal.classList.remove('active');
+
+    document.body.style.overflow = 'auto';
+
+  }
+
+  // BOTÃO FECHAR
+
+  closeTherapyModalBtn.addEventListener(
+    'click',
+    closeTherapy
+  );
+
+  // FECHAR AO CLICAR FORA
+
+  therapyModal.addEventListener('click', e => {
+
+    if(e.target === therapyModal){
+
+      closeTherapy();
+
+    }
+
+  });
+
+});
+</script>
+
+</body>
+
+</html>
